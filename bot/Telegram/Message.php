@@ -55,8 +55,7 @@ class Message
     {
         $data = array_merge(["chat_id" => $this->chat_id, "text" => $this->text], $this->args);
 
-        if(env("FAKE", true))
-            dd($data);
+        dump($data);
 
         return $this->api->sendMessage($data);
     }
